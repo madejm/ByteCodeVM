@@ -54,14 +54,6 @@ public class Parser {
 		return bc;
 	}
 
-	public static void main(String[] args) {
-		try {
-			parse("test.txt");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 }
 
 class ParseException extends Exception{
