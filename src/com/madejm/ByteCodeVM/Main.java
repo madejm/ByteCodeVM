@@ -1,15 +1,17 @@
 package com.madejm.ByteCodeVM;
 
 import com.madejm.ByteCodeVM.BusinessLogic.VM;
+import com.madejm.ByteCodeVM.BusinessObjects.Models.ByteCode;
 
 import static com.madejm.ByteCodeVM.BusinessLogic.Bytecode.*;
+import static com.madejm.ByteCodeVM.BusinessObjects.Models.ByteCode.*;
 
 public class Main {
 
     static int[] hello = {
             ICONST, 10,
             ICONST, 22,
-            IMUL,
+            IADD,
             PRINT,
             HALT
     };
@@ -39,8 +41,16 @@ public class Main {
             HALT					// 24
     };
 
+    static ByteCode[] multiply = {
+            new ICONST(), new VALUE(10),
+            new ICONST(), new VALUE(22),
+            new IMUL(),
+            new PRINT(),
+            new HALT()
+    };
+
     public static void main(String[] args) {
-        VM vm = new VM(hello, 0, 0);
+        VM vm = new VM(multiply, 0, 0);
         vm.trace = true;
         vm.exec();
         vm.dumpCodeMemory();

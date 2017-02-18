@@ -1,13 +1,17 @@
-package com.madejm.ByteCodeVM.BusinessLogic;
+package com.madejm.ByteCodeVM.BusinessObjects.Interfaces;
+
+import com.madejm.ByteCodeVM.BusinessObjects.Models.VMContext;
 
 import java.util.Map;
 
 /**
- * Created by mejdej on 17/12/16.
+ * Created by mejdej on 19/12/16.
  */
-public class ByteCodeInterpreter {
+public interface ByteCodeInterpreter {
+    public void interpret(VMContext context);
+}
 
-    //interpretuje polecenia
+//interpretuje polecenia
 
     /*
 
@@ -15,7 +19,6 @@ public class ByteCodeInterpreter {
 
 
      */
-}
 
 interface Expression {
     public int interpret(final Map<String, Expression> variables);
