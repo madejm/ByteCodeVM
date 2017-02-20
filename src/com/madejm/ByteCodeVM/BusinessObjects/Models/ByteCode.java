@@ -28,6 +28,7 @@ public class ByteCode {
         }
     }
 
+    // int add
     public static class IADD extends ByteCode implements ByteCodeInterpreter {
 
         public void interpret(VMContext context) {
@@ -37,6 +38,7 @@ public class ByteCode {
         }
     }
 
+    // int substract
     public static class ISUB extends ByteCode implements ByteCodeInterpreter {
 
         public void interpret(VMContext context) {
@@ -46,6 +48,7 @@ public class ByteCode {
         }
     }
 
+    // int multiply
     public static class IMUL extends ByteCode implements ByteCodeInterpreter {
 
         public void interpret(VMContext context) {
@@ -55,6 +58,7 @@ public class ByteCode {
         }
     }
 
+    // int less than
     public static class ILT  extends ByteCode implements ByteCodeInterpreter {
 
         public void interpret(VMContext context) {
@@ -64,6 +68,7 @@ public class ByteCode {
         }
     }
 
+    // int equal
     public static class IEQ  extends ByteCode implements ByteCodeInterpreter {
 
         public void interpret(VMContext context) {
@@ -73,6 +78,7 @@ public class ByteCode {
         }
     }
 
+    // branch
     public static class BR extends ByteCode implements ByteCodeInterpreter {
 
         public BR() {
@@ -87,6 +93,7 @@ public class ByteCode {
         }
     }
 
+    // branch if true
     public static class BRT extends ByteCode implements ByteCodeInterpreter {
 
         public BRT() {
@@ -101,6 +108,7 @@ public class ByteCode {
         }
     }
 
+    // branch if false
     public static class BRF extends ByteCode implements ByteCodeInterpreter {
 
         public BRF() {
@@ -115,6 +123,7 @@ public class ByteCode {
         }
     }
 
+    // push constant integer
     public static class ICONST extends ByteCode implements ByteCodeInterpreter {
 
         public ICONST() {
@@ -130,19 +139,21 @@ public class ByteCode {
         }
     }
 
-//    public static class LOAD extends ByteCode implements ByteCodeInterpreter {
-//
-//        public LOAD() {
-//            super();
-//
-//            this.numberOfArguments = 1;
-//        }
-//
-//        public void interpret(VMContext context) {
-//
-//        }
-//    }
+    // load from local context
+    public static class LOAD extends ByteCode implements ByteCodeInterpreter {
 
+        public LOAD() {
+            super();
+
+            this.numberOfArguments = 1;
+        }
+
+        public void interpret(VMContext context) {
+
+        }
+    }
+
+    // load from global memory
     public static class GLOAD extends ByteCode implements ByteCodeInterpreter {
 
         public GLOAD() {
@@ -158,19 +169,21 @@ public class ByteCode {
         }
     }
 
-//    public static class STORE extends ByteCode implements ByteCodeInterpreter {
-//
-//        public STORE() {
-//            super();
-//
-//            this.numberOfArguments = 1;
-//        }
-//
-//        public void interpret(VMContext context) {
-//
-//        }
-//    }
+    // store in local context
+    public static class STORE extends ByteCode implements ByteCodeInterpreter {
 
+        public STORE() {
+            super();
+
+            this.numberOfArguments = 1;
+        }
+
+        public void interpret(VMContext context) {
+
+        }
+    }
+
+    // store in global memory
     public static class GSTORE extends ByteCode implements ByteCodeInterpreter {
 
         public GSTORE() {
@@ -185,6 +198,7 @@ public class ByteCode {
         }
     }
 
+    // send stack top to printer
     public static class PRINT extends ByteCode implements ByteCodeInterpreter {
 
         public void interpret(VMContext context) {
@@ -193,6 +207,7 @@ public class ByteCode {
         }
     }
 
+    // throw away top of stack
     public static class POP extends ByteCode implements ByteCodeInterpreter {
 
         public void interpret(VMContext context) {
@@ -200,6 +215,7 @@ public class ByteCode {
         }
     }
 
+    // finish execution
     public static class HALT extends ByteCode {
 
     }

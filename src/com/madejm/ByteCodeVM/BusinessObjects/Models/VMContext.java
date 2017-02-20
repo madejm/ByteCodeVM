@@ -1,5 +1,7 @@
 package com.madejm.ByteCodeVM.BusinessObjects.Models;
 
+import com.madejm.ByteCodeVM.BusinessLogic.Printer;
+
 /**
  * Created by mejdej on 19/12/16.
  */

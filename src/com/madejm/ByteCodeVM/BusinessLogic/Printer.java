@@ -1,4 +1,4 @@
-package com.madejm.ByteCodeVM.BusinessObjects.Models;
+package com.madejm.ByteCodeVM.BusinessLogic;
 
 import java.util.ArrayList;
 import java.util.List;
