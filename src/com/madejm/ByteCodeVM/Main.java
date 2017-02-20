@@ -1,11 +1,10 @@
 package com.madejm.ByteCodeVM;
 
-import com.madejm.ByteCodeVM.BusinessLogic.ArchitectureSelector;
 import com.madejm.ByteCodeVM.BusinessLogic.TextParser;
 import com.madejm.ByteCodeVM.BusinessLogic.VM;
 import com.madejm.ByteCodeVM.BusinessObjects.Interfaces.Architecture;
 import com.madejm.ByteCodeVM.BusinessObjects.Models.ByteCode;
-import com.madejm.ByteCodeVM.BusinessLogic.Preprocessor;
+import com.madejm.ByteCodeVM.BusinessLogic.UtilityProcessor;
 
 public class Main {
 
@@ -15,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         ByteCode[] operations;
 
-        Architecture arch = ArchitectureSelector.get(args[1]);
+        Architecture arch = UtilityProcessor.getInstance().selectArchitecture(args[1]);
 
         TextParser parser = new TextParser();
         parser.setStrategicArchitecture(arch);
@@ -27,9 +26,7 @@ public class Main {
             return;
         }
 
-        int nglobals = Preprocessor.getGlobalsMaxIndex(operations);
-
-        VM vm = new VM(operations, 0, nglobals);
+        VM vm = new VM(operations, 0);
         vm.trace = true;
         vm.exec();
         vm.dumpCodeMemory();

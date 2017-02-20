@@ -25,7 +25,9 @@ public class VM {
 
     public boolean trace = false;
 
-    public VM(ByteCode[] code, int startip, int nglobals) {
+    public VM(ByteCode[] code, int startip) {
+        int nglobals = UtilityProcessor.getInstance().getGlobalsMaxIndex(code);
+
         this.context.code = code;
         this.context.startip = startip;
         this.context.globals = new int[nglobals];

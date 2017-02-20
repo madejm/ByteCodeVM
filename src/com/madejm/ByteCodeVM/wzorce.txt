@@ -30,3 +30,12 @@ ByteCode:
     + klasy implementują jeden prosty interfejs do wykonania poleceń
     Wady:
     - niejawna edycja wartości przekazywanego do interpretacji kontekstu
+
+UtilityProcessor:
+
+    Singleton (Lazy):
+    Klasa udostępniająca dodatkowe funkcjonalności wspomagające.
+    Zalety:
+    + szybko dostępna z każdego miejsca
+    Wady:
+    - trzymana w pamięci od pierwszego wywołania, do końca działania aplikacji
