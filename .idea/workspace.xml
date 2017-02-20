@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67d70e96-d08d-469d-af81-3ae8d31b4772" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/wzorce.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/Preprocessor.java" afterPath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/Preprocessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/TextParser.java" afterPath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/TextParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/VM.java" afterPath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/VM.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Abstractions/ParseChain.java" afterPath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Abstractions/ParseChain.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/Architectures/ArchitectureExtended.java" afterPath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/Architectures/ArchitectureExtended.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/Architectures/ArchitectureStandard.java" afterPath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/Architectures/ArchitectureStandard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/ByteCode.java" afterPath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/ByteCode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/VMContext.java" afterPath="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/VMContext.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,93 +27,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VM.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/VM.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="61" column="34" lean-forward="true" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2874#2882#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/TextParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="40" column="24" lean-forward="false" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#692#702#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParseChain.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Abstractions/ParseChain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1028">
-              <caret line="262" column="39" lean-forward="true" selection-start-line="262" selection-start-column="39" selection-end-line="262" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Preprocessor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/Preprocessor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="63" lean-forward="false" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ByteCode.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ByteCode.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/ByteCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-673">
-              <caret line="105" column="39" lean-forward="false" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="39" />
+            <state relative-caret-position="2601">
+              <caret line="155" column="5" lean-forward="false" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArchitectureExtended.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/Architectures/ArchitectureExtended.java">
+      <file leaf-file-name="wzorce.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/wzorce.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+            <state relative-caret-position="510">
+              <caret line="29" column="6" lean-forward="false" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArchitectureStandard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/Architectures/ArchitectureStandard.java">
+      <file leaf-file-name="VMContext.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/VMContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+            <state relative-caret-position="153">
+              <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -136,12 +74,12 @@
       <find>startip</find>
       <find>b =</find>
       <find>a =</find>
-      <find>stack</find>
       <find>System.</find>
       <find>class</find>
       <find>public public class</find>
       <find>ByteCode</find>
       <find>public class</find>
+      <find>stack</find>
     </findStrings>
     <replaceStrings>
       <replace>extends ByteCode implements ByteCodeInterpreter {</replace>
@@ -174,9 +112,7 @@
         <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/ByteCodeInterpreter.java" />
         <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/Some_fancy_observer.java" />
         <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Interfaces/ByteCodeInterpreter.java" />
-        <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/VMContext.java" />
         <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/Printer.java" />
-        <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/ByteCode.java" />
         <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Interfaces/Architecture.java" />
         <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/ArchitectureStandard.java" />
         <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/ArchitectureExtended.java" />
@@ -187,12 +123,15 @@
         <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/loop.txt" />
         <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/ArchitectureSelector.java" />
         <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/Architectures/ArchitectureExtended.java" />
-        <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/Architectures/ArchitectureStandard.java" />
         <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/TextParser.java" />
-        <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Abstractions/ParseChain.java" />
         <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/Preprocessor.java" />
         <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/VM.java" />
+        <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/ByteCode.java" />
+        <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/Architectures/ArchitectureStandard.java" />
+        <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/Architectures/ArchitectureExtended.java" />
+        <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Abstractions/ParseChain.java" />
+        <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/VMContext.java" />
+        <option value="$PROJECT_DIR$/src/com/madejm/ByteCodeVM/wzorce.txt" />
       </list>
     </option>
   </component>
@@ -388,6 +327,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com/madejm/ByteCodeVM" />
+    </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
     <UpdatedFiles>
@@ -732,7 +676,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487627466828</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updated architecture operation sets.&#10;Fixed minor bugs.">
+      <created>1487628657112</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1487628657112</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -769,7 +720,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39967638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.289644" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -784,7 +735,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implemented ByteCodes.&#10;Added Printer." />
     <MESSAGE value="Class cleanup.&#10;Implemented Architecture selector, Preprocessor, Printer." />
-    <option name="LAST_COMMIT_MESSAGE" value="Class cleanup.&#10;Implemented Architecture selector, Preprocessor, Printer." />
+    <MESSAGE value="Updated architecture operation sets.&#10;Fixed minor bugs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated architecture operation sets.&#10;Fixed minor bugs." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -993,16 +945,8 @@
         <state relative-caret-position="153">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/VMContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="53" lean-forward="false" selection-start-line="0" selection-start-column="53" selection-end-line="0" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1066,14 +1010,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/Architectures/ArchitectureStandard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/TextParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -1082,14 +1018,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#692#702#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/Architectures/ArchitectureExtended.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1114,14 +1042,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/ByteCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-673">
-          <caret line="105" column="39" lean-forward="false" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessLogic/Preprocessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1132,13 +1052,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/Architectures/ArchitectureStandard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Abstractions/ParseChain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1028">
-          <caret line="262" column="39" lean-forward="true" selection-start-line="262" selection-start-column="39" selection-end-line="262" selection-end-column="39" />
+        <state relative-caret-position="92">
+          <caret line="153" column="5" lean-forward="false" selection-start-line="153" selection-start-column="5" selection-end-line="153" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/Architectures/ArchitectureExtended.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/VMContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/wzorce.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="29" column="6" lean-forward="false" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/madejm/ByteCodeVM/BusinessObjects/Models/ByteCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2601">
+          <caret line="155" column="5" lean-forward="false" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

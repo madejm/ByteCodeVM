@@ -11,6 +11,7 @@ import com.madejm.ByteCodeVM.BusinessObjects.Interfaces.Architecture;
 public class ArchitectureStandard implements Architecture {
     public ParseChain makeChain() {
         ParseChain first = new ParsePARSEEND(null); // must be at the end
+
         first = new ParseHALT(first);
         first = new ParsePRINT(first);
         first = new ParseICONST(first);

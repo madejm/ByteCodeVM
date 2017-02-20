@@ -1,0 +1,32 @@
+Parser:
+
+    Łańcuch zobowiązań:
+    Istnieje wiele drobnych klas dziedziczących po jednej klasie abstrakcyjnej. Ich zadaniem jest tworzenie klas obsługujących operacje. Każda klasa albo pozytywnie rozpoznaje wzorzec i tworzy obiekt odpowiedniej klasy, albo przekazuje sterowanie do kolejnej klasy.
+    W zależności od wybranej architektury jest tworzony inny łańcuch zobowiązań.
+    Zalety:
+    + możliwość wielokrotnego wykorzystanie tej samej klasy przez różne architektury.
+    + oddzielenie klas tworzących obiekty operacji od klasy głównej parsera.
+    + łatwa podmiana i dodanie kolejnej operacji.
+    + ogniwa są niezależne od siebie.
+    Wady:
+    - większa złożoność obliczeniowa programu.
+    - trudniejsza analiza kodu.
+    - utrudnione debuggowanie.
+
+    Strategia:
+    W zależności od stanu wewnętrznego możliwe jest parsowanie kodu dla różnych architektur.
+    Zalety:
+    + możliwe operacje dla jednej architetury są zapisywane w jednym obiekcie.
+    + łatwo można dodać kolejny stan/zachowanie.
+    + wykorzystanie jednej klasy do obsługi różnych architektur.
+    Wady:
+    - konieczność przechowywanie obiektu stanu przez cały cykl życia parsera.
+
+ByteCode:
+
+    Interpreter:
+    Wiele klas dziedziczących po ByteCode opisuje różne dostępne instrukcje. Każda z nich wykonuje pewien zestaw operacji w kontekście maszyny. Wzorzec wykorzystany jest do przeprowadzenia zawartych w danej subklasie operacji.
+    Zalety:
+    + klasy implementują jeden prosty interfejs do wykonania poleceń
+    Wady:
+    - niejawna edycja wartości przekazywanego do interpretacji kontekstu

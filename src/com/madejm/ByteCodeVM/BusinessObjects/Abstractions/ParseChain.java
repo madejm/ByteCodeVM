@@ -153,20 +153,6 @@ public abstract class ParseChain {
         }
     }
 
-    public static class ParseLOAD extends ParseChain {
-        public ParseLOAD(ParseChain ch) {
-            super(ch);
-        }
-
-        @Override
-        public ByteCode makeObject(String ln) throws Exception {
-            if (Pattern.matches("LOAD", ln)) {
-                return new ByteCode.LOAD();
-            } else
-                return next.makeObject(ln);
-        }
-    }
-
     public static class ParseGLOAD extends ParseChain {
         public ParseGLOAD(ParseChain ch) {
             super(ch);
@@ -176,20 +162,6 @@ public abstract class ParseChain {
         public ByteCode makeObject(String ln) throws Exception {
             if (Pattern.matches("GLOAD", ln)) {
                 return new ByteCode.GLOAD();
-            } else
-                return next.makeObject(ln);
-        }
-    }
-
-    public static class ParseSTORE extends ParseChain {
-        public ParseSTORE(ParseChain ch) {
-            super(ch);
-        }
-
-        @Override
-        public ByteCode makeObject(String ln) throws Exception {
-            if (Pattern.matches("STORE", ln)) {
-                return new ByteCode.STORE();
             } else
                 return next.makeObject(ln);
         }

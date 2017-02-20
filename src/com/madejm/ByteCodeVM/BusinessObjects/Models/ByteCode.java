@@ -139,20 +139,6 @@ public class ByteCode {
         }
     }
 
-    // load from local context
-    public static class LOAD extends ByteCode implements ByteCodeInterpreter {
-
-        public LOAD() {
-            super();
-
-            this.numberOfArguments = 1;
-        }
-
-        public void interpret(VMContext context) {
-
-        }
-    }
-
     // load from global memory
     public static class GLOAD extends ByteCode implements ByteCodeInterpreter {
 
@@ -166,20 +152,6 @@ public class ByteCode {
             // load from global memory
             VALUE addr = (VALUE)context.code[context.ip++];
             context.stack[++context.sp] = context.globals[addr.value];
-        }
-    }
-
-    // store in local context
-    public static class STORE extends ByteCode implements ByteCodeInterpreter {
-
-        public STORE() {
-            super();
-
-            this.numberOfArguments = 1;
-        }
-
-        public void interpret(VMContext context) {
-
         }
     }
 
