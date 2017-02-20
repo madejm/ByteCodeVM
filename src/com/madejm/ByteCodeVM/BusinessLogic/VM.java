@@ -59,6 +59,7 @@ public class VM {
         }
         if ( trace ) ps.printf("%-35s", disInstr());
         if ( trace ) ps.println(stackString());
+        if ( trace ) ps.println();
         if ( trace ) dumpDataMemory();
     }
 

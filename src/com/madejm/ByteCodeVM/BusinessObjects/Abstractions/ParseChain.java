@@ -202,7 +202,7 @@ public abstract class ParseChain {
 
         @Override
         public ByteCode makeObject(String ln) throws Exception {
-            if (Pattern.matches(".GSTORE.", ln)) {
+            if (Pattern.matches("GSTORE", ln)) {
                 return new ByteCode.GSTORE();
             } else
                 return next.makeObject(ln);
@@ -259,7 +259,7 @@ public abstract class ParseChain {
 
         @Override
         public ByteCode makeObject(String ln) throws Exception {
-            System.out.println("ERROR: " + ln);
+            System.out.println("ERROR, operator not found for current architecture: " + ln);
             throw new ParseException();
         }
     }

@@ -18,7 +18,7 @@ public class Preprocessor {
                 ByteCode value = operations[i+1];
 
                 if (value instanceof VALUE) {
-                    int globalIndex = ((VALUE) value).value;
+                    int globalIndex = ((VALUE) value).value + 1;
 
                     if (globalIndex > maxIndex) {
                         maxIndex = globalIndex;

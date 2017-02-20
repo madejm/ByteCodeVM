@@ -22,7 +22,6 @@ public class ArchitectureExtended implements Architecture {
         first = new ParseBR(first);
         first = new ParseBRT(first);
         first = new ParseBRF(first);
-        first = new ParseHALT(first);
         first = new ParseIEQ(first);
         first = new ParseILT(first);
         first = new ParseIMUL(first);

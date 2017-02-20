@@ -33,7 +33,13 @@ public class TextParser {
 		while ((ln = bufferReader.readLine()) != null) {
 			commands = (ln.replaceAll(",", "").replaceAll(";", "")).trim()
 					.split(" ");
-			tmplist.add(first.makeObject(commands[0].toUpperCase()));
+
+            try {
+                tmplist.add(first.makeObject(commands[0].toUpperCase()));
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw e;
+            }
 
 			for (int i = 1; i < commands.length; i++) {
 				tmplist.add(makeVlue(commands[i]));
