@@ -1,9 +1,7 @@
 package com.madejm.ByteCodeVM.BusinessLogic;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -11,41 +9,43 @@ import java.util.regex.Pattern;
 import com.madejm.ByteCodeVM.BusinessObjects.Models.ByteCode;
 
 public class Parser {
+	public static final short arch1 = 1;
+	public static final short arch2 = 2;
 
-	static ByteCode[] parse(String path) throws Exception {
-		FileReader fileReader = null;
-		try {
-			fileReader = new FileReader(path);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+	private Architecture arch;
+
+	public Parser(short flag) {
+		switch (flag) {
+		case arch1:
+			arch = new Arch1();
+		case arch2:
+			arch = new Arch2();
 		}
+	}
+
+	public ByteCode[] parse(String path) throws Exception {
+		FileReader fileReader = null;
+		fileReader = new FileReader(path);
 
 		List<ByteCode> tmplist = new ArrayList<ByteCode>();
 		BufferedReader bufferReader = new BufferedReader(fileReader);
 		String ln;
 		String[] commands;
-		Chain first = ChainManagment.makeChain();
+		ParseChain first = arch.makeChain();
 
-		try {
-			while ((ln = bufferReader.readLine()) != null) {
-				System.out.println(ln);
-				commands = (ln.replaceAll(",", "").replaceAll(";", "")).trim().split(" ");
-				tmplist.add(first.makeObject(commands[0].toUpperCase()));
+		while ((ln = bufferReader.readLine()) != null) {
+			System.out.println(ln);
+			commands = (ln.replaceAll(",", "").replaceAll(";", "")).trim()
+					.split(" ");
+			tmplist.add(first.makeObject(commands[0].toUpperCase()));
 
-				for (int i = 1; i < commands.length; i++) {
-					tmplist.add(ChainManagment.makeVlue(commands[i]));
-				}
-
+			for (int i = 1; i < commands.length; i++) {
+				tmplist.add(makeVlue(commands[i]));
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
+
 		}
 
-		try {
-			fileReader.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		fileReader.close();
 
 		ByteCode[] bc = new ByteCode[tmplist.size()];
 		for (int i = 0; i < tmplist.size(); i++)
@@ -54,19 +54,31 @@ public class Parser {
 		return bc;
 	}
 
+	private static ByteCode makeVlue(String ln) {
+		int v = Integer.parseInt(ln);
+		return new ByteCode.VALUE(v);
+	}
+
 }
 
-class ParseException extends Exception{
+class ParseException extends Exception {
 	private static final long serialVersionUID = 9158070077781811054L;
 
-	public ParseException(){
+	public ParseException() {
 		System.out.println("Error while parsing.");
 	}
 }
 
-class ChainManagment {
-	static Chain makeChain() {
-		Chain first = new ParsePARSEEND(null); //must be at the end
+/*
+ * 
+ */
+interface Architecture {
+	ParseChain makeChain();
+}
+
+class Arch1 implements Architecture {
+	public ParseChain makeChain() {
+		ParseChain first = new ParsePARSEEND(null); // must be at the end
 		first = new ParseHALT(first);
 		first = new ParsePOP(first);
 		first = new ParsePRINT(first);
@@ -87,25 +99,45 @@ class ChainManagment {
 
 		return first;
 	}
+}
 
-	static ByteCode makeVlue(String ln) {
-		int v = Integer.parseInt(ln);
-		return new ByteCode.VALUE(v);
+class Arch2 implements Architecture {
+	public ParseChain makeChain() {
+		ParseChain first = new ParsePARSEEND(null); // must be at the end
+		first = new ParseHALT(first);
+		first = new ParsePOP(first);
+		first = new ParsePRINT(first);
+		first = new ParseSTORE(first);
+		first = new ParseGSTORE(first);
+		first = new ParseLOAD(first);
+		first = new ParseGLOAD(first);
+		first = new ParseICONST(first);
+		first = new ParseBR(first);
+		first = new ParseBRT(first);
+		first = new ParseBRF(first);
+		first = new ParseHALT(first);
+		first = new ParseIEQ(first);
+		first = new ParseILT(first);
+		first = new ParseIMUL(first);
+		first = new ParseISUB(first);
+		first = new ParseIADD(first);
+
+		return first;
 	}
 }
 
-abstract class Chain {
-	protected Chain next;
+abstract class ParseChain {
+	protected ParseChain next;
 
-	Chain(Chain ch) {
+	ParseChain(ParseChain ch) {
 		next = ch;
 	}
 
 	abstract ByteCode makeObject(String ln) throws Exception;
 }
 
-class ParseIADD extends Chain {
-	ParseIADD(Chain ch) {
+class ParseIADD extends ParseChain {
+	ParseIADD(ParseChain ch) {
 		super(ch);
 	}
 
@@ -119,8 +151,8 @@ class ParseIADD extends Chain {
 
 }
 
-class ParseISUB extends Chain {
-	ParseISUB(Chain ch) {
+class ParseISUB extends ParseChain {
+	ParseISUB(ParseChain ch) {
 		super(ch);
 	}
 
@@ -133,8 +165,8 @@ class ParseISUB extends Chain {
 	}
 }
 
-class ParseIMUL extends Chain {
-	ParseIMUL(Chain ch) {
+class ParseIMUL extends ParseChain {
+	ParseIMUL(ParseChain ch) {
 		super(ch);
 	}
 
@@ -147,8 +179,8 @@ class ParseIMUL extends Chain {
 	}
 }
 
-class ParseILT extends Chain {
-	ParseILT(Chain ch) {
+class ParseILT extends ParseChain {
+	ParseILT(ParseChain ch) {
 		super(ch);
 	}
 
@@ -161,8 +193,8 @@ class ParseILT extends Chain {
 	}
 }
 
-class ParseIEQ extends Chain {
-	ParseIEQ(Chain ch) {
+class ParseIEQ extends ParseChain {
+	ParseIEQ(ParseChain ch) {
 		super(ch);
 	}
 
@@ -175,8 +207,8 @@ class ParseIEQ extends Chain {
 	}
 }
 
-class ParseBR extends Chain {
-	ParseBR(Chain ch) {
+class ParseBR extends ParseChain {
+	ParseBR(ParseChain ch) {
 		super(ch);
 	}
 
@@ -189,8 +221,8 @@ class ParseBR extends Chain {
 	}
 }
 
-class ParseBRT extends Chain {
-	ParseBRT(Chain ch) {
+class ParseBRT extends ParseChain {
+	ParseBRT(ParseChain ch) {
 		super(ch);
 	}
 
@@ -203,8 +235,8 @@ class ParseBRT extends Chain {
 	}
 }
 
-class ParseBRF extends Chain {
-	ParseBRF(Chain ch) {
+class ParseBRF extends ParseChain {
+	ParseBRF(ParseChain ch) {
 		super(ch);
 	}
 
@@ -217,8 +249,8 @@ class ParseBRF extends Chain {
 	}
 }
 
-class ParseICONST extends Chain {
-	ParseICONST(Chain ch) {
+class ParseICONST extends ParseChain {
+	ParseICONST(ParseChain ch) {
 		super(ch);
 	}
 
@@ -231,8 +263,8 @@ class ParseICONST extends Chain {
 	}
 }
 
-class ParseLOAD extends Chain {
-	ParseLOAD(Chain ch) {
+class ParseLOAD extends ParseChain {
+	ParseLOAD(ParseChain ch) {
 		super(ch);
 	}
 
@@ -245,8 +277,8 @@ class ParseLOAD extends Chain {
 	}
 }
 
-class ParseGLOAD extends Chain {
-	ParseGLOAD(Chain ch) {
+class ParseGLOAD extends ParseChain {
+	ParseGLOAD(ParseChain ch) {
 		super(ch);
 	}
 
@@ -259,8 +291,8 @@ class ParseGLOAD extends Chain {
 	}
 }
 
-class ParseSTORE extends Chain {
-	ParseSTORE(Chain ch) {
+class ParseSTORE extends ParseChain {
+	ParseSTORE(ParseChain ch) {
 		super(ch);
 	}
 
@@ -273,8 +305,8 @@ class ParseSTORE extends Chain {
 	}
 }
 
-class ParseGSTORE extends Chain {
-	ParseGSTORE(Chain ch) {
+class ParseGSTORE extends ParseChain {
+	ParseGSTORE(ParseChain ch) {
 		super(ch);
 	}
 
@@ -287,8 +319,8 @@ class ParseGSTORE extends Chain {
 	}
 }
 
-class ParsePRINT extends Chain {
-	ParsePRINT(Chain ch) {
+class ParsePRINT extends ParseChain {
+	ParsePRINT(ParseChain ch) {
 		super(ch);
 	}
 
@@ -301,8 +333,8 @@ class ParsePRINT extends Chain {
 	}
 }
 
-class ParsePOP extends Chain {
-	ParsePOP(Chain ch) {
+class ParsePOP extends ParseChain {
+	ParsePOP(ParseChain ch) {
 		super(ch);
 	}
 
@@ -315,8 +347,8 @@ class ParsePOP extends Chain {
 	}
 }
 
-class ParseHALT extends Chain {
-	ParseHALT(Chain ch) {
+class ParseHALT extends ParseChain {
+	ParseHALT(ParseChain ch) {
 		super(ch);
 	}
 
@@ -329,9 +361,9 @@ class ParseHALT extends Chain {
 	}
 }
 
-class ParsePARSEEND extends Chain {
+class ParsePARSEEND extends ParseChain {
 
-	ParsePARSEEND(Chain ch) {
+	ParsePARSEEND(ParseChain ch) {
 		super(null);
 	}
 
