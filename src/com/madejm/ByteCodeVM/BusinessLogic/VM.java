@@ -7,6 +7,7 @@ import com.madejm.ByteCodeVM.BusinessObjects.Models.ByteCode;
 import com.madejm.ByteCodeVM.BusinessObjects.Models.VMContext;
 import com.madejm.ByteCodeVM.BusinessObjects.Interfaces.ByteCodeInterpreter;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class VM {
     public static final int DEFAULT_STACK_SIZE = 1000;
     public static final int FALSE = 0;
     public static final int TRUE = 1;
+    public final static PrintStream ps = System.out; //System.err if console does not support colors.
 
     public VMContext context = new VMContext();
 
@@ -39,8 +41,8 @@ public class VM {
     protected void cpu() {
         ByteCode opcode = this.context.code[this.context.ip];
         int a,b,addr,offset;
-        while (opcode instanceof HALT && this.context.ip < this.context.code.length) {
-            if ( trace ) System.err.printf("%-35s", disInstr());
+        while (!(opcode instanceof HALT) && this.context.ip < this.context.code.length) {
+            if ( trace ) ps.printf("%-35s", disInstr());
             this.context.ip++; //jump to next instruction or to operand
 
             if (opcode instanceof ByteCodeInterpreter) {
@@ -49,11 +51,14 @@ public class VM {
                 throw new Error("invalid opcode: "+opcode+" at ip="+(this.context.ip-1));
             }
 
-            if ( trace ) System.err.println(stackString());
+            if ( trace ) ps.println(stackString());
+
+            this.context.printer.print();
+
             opcode = this.context.code[this.context.ip];
         }
-        if ( trace ) System.err.printf("%-35s", disInstr());
-        if ( trace ) System.err.println(stackString());
+        if ( trace ) ps.printf("%-35s", disInstr());
+        if ( trace ) ps.println(stackString());
         if ( trace ) dumpDataMemory();
     }
 
@@ -78,7 +83,8 @@ public class VM {
         if ( nargs>0 ) {
             List<String> operands = new ArrayList<String>();
             for (int i=this.context.ip+1; i<=this.context.ip+nargs; i++) {
-                operands.add(String.valueOf(this.context.code[i]));
+                VALUE addr = (VALUE)this.context.code[i];
+                operands.add(String.valueOf(addr.value));
             }
             for (int i = 0; i<operands.size(); i++) {
                 String s = operands.get(i);
@@ -90,22 +96,22 @@ public class VM {
     }
 
     public void dumpDataMemory() {
-        System.err.println("Data memory:");
+        ps.println("Data memory:");
         int addr = 0;
         for (int o : this.context.globals) {
-            System.err.printf("%04d: %s\n", addr++, o);
+            ps.printf("%04d: %s\n", addr++, o);
         }
-        System.err.println();
+        ps.println();
     }
 
     public void dumpCodeMemory() {
-        System.err.println("Code memory:");
+        ps.println("Code memory:");
         int addr = 0;
         for (ByteCode o : this.context.code) {
             String value = o instanceof VALUE ? String.valueOf(((VALUE)o).value) : o.name;
 
-            System.err.printf("%04d: " + value + "\n", addr++);
+            ps.printf("%04d: " + value + "\n", addr++);
         }
-        System.err.println();
+        ps.println();
     }
 }

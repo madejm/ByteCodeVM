@@ -16,7 +16,7 @@ public class Main {
             HALT
     };
 
-    static int[] loop = {
+    static int[] loopp = {
             // .GLOBALS 2; N, I
             // N = 10						ADDRESS
             ICONST, 10,				// 0
@@ -39,6 +39,29 @@ public class Main {
             // DONE (24):
             // PRINT "LOOPED "+N+" TIMES."
             HALT					// 24
+    };
+
+    static ByteCode[] loop = {
+            new ICONST(), new VALUE(10),				// 0
+            new GSTORE(), new VALUE(0),				// 2
+            // I = 0
+            new ICONST(), new VALUE(0),				// 4
+            new GSTORE(), new VALUE(1),				// 6
+            // WHILE I<N:
+            // START (8):
+            new GLOAD(), new VALUE(1),				// 8
+            new GLOAD(), new VALUE(0),				// 10
+            new ILT(),					// 12
+            new BRF(), new VALUE(24),				    // 13
+            //     I = I + 1
+            new GLOAD(), new VALUE(1),				// 15
+            new ICONST(), new VALUE(1),				// 17
+            new IADD(),					// 19
+            new GSTORE(), new VALUE(1),				// 20
+            new BR(), new VALUE(8),					// 22
+            // DONE (24):
+            // PRINT "LOOPED "+N+" TIMES."
+            new HALT()					// 24
     };
 
     static ByteCode[] multiply = {

@@ -14,5 +14,7 @@ public class VMContext {
     // memory
     public ByteCode[] code;    // word-addressable code memory but still bytecodes.
     public int[] globals;      // global variable space
-    public int[] stack;		// Operand stack, grows upwards
+    public int[] stack;		   // Operand stack, grows upwards
+
+    public Printer printer = new Printer();
 }
