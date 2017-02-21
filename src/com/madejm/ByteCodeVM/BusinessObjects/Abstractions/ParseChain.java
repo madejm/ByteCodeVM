@@ -5,7 +5,7 @@ import com.madejm.ByteCodeVM.BusinessObjects.Models.ByteCode;
 import java.util.regex.Pattern;
 
 /**
- * Created by mejdej on 20/02/17.
+ * Łańcuch zobowiązań, część parsera odpowiedzialna za tworzenie obiektów operacji.
  */
 public abstract class ParseChain {
     protected ParseChain next;

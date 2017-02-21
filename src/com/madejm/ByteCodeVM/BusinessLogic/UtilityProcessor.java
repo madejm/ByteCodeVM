@@ -9,7 +9,7 @@ import com.madejm.ByteCodeVM.BusinessObjects.Models.ByteCode.*;
 import java.util.HashMap;
 
 /**
- * Created by mejdej on 20/02/17.
+ * Singleton udostępniający dodatkowe metody.
  */
 public class UtilityProcessor {
 
@@ -28,6 +28,14 @@ public class UtilityProcessor {
         return instance;
     }
 
+    /**
+     *
+     * Metoda zwraca konkretną architekturę na podstawie przekazanego parametru
+     *
+     * @param flag
+     * Flaga przekazana na wywołaniu programu
+     * @return
+     */
     public Architecture selectArchitecture(String flag) {
         Class archClass = architectures.get(flag);
         Architecture arch = null;
@@ -40,6 +48,14 @@ public class UtilityProcessor {
 
         return arch;
     }
+
+    /**
+     * Metoda zwracająca ilość potrzebych miejsc w rejestrze zmiennych globalnych
+     *
+     * @param operations
+     * Lista operacji do wykonania
+     * @return
+     */
 
     public int getGlobalsMaxIndex(ByteCode[] operations) {
         int maxIndex = 0;

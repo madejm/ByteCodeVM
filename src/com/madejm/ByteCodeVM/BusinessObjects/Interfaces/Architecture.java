@@ -3,7 +3,7 @@ package com.madejm.ByteCodeVM.BusinessObjects.Interfaces;
 import com.madejm.ByteCodeVM.BusinessObjects.Abstractions.ParseChain;
 
 /**
- * Created by mejdej on 20/02/17.
+ * Interfejs architektur wstrzykiwanych jako strategia do parsera.
  */
 public interface Architecture {
     ParseChain makeChain();

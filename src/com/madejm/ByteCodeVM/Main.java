@@ -8,8 +8,11 @@ import com.madejm.ByteCodeVM.BusinessLogic.UtilityProcessor;
 
 public class Main {
 
-    // args[0] file
-    // args[1] architecture
+    /**
+     * @param args
+     * args[0] ścieżka do pliku z kodem
+     * args[1] flaga wykorzystanej architektury
+     */
 
     public static void main(String[] args) {
         ByteCode[] operations;

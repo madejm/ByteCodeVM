@@ -3,20 +3,45 @@ package com.madejm.ByteCodeVM.BusinessObjects.Models;
 import com.madejm.ByteCodeVM.BusinessLogic.Printer;
 
 /**
- * Created by mejdej on 19/12/16.
+ *
+ * Kontekst maszyny wirtualnej.
+ * Przetrzymuje listę operacji, stos zmiennych, zmienne globalne oraz wskaźniki stosów.
+ *
  */
+
 public class VMContext {
 
-    // registers
-    public int ip;              // instruction pointer register
-    public int sp = -1;  		// stack pointer register
+    /**
+     * Wskaźnik rejestru instrukcji
+     */
+    public int ip;
+    /**
+     * Wskaźnik rejestru stosu zmiennych
+     */
+    public int sp = -1;
 
-    public int startip = 0;     // where execution begins
+    /**
+     * Wskaźnik początkowej operacji
+     */
+    public int startip = 0;
 
-    // memory
-    public ByteCode[] code;     // word-addressable code memory but still bytecodes.
-    public int[] globals;       // global variable space
-    public int[] stack;		    // Operand stack, grows upwards
+    /**
+     * Rejestr operacji
+     */
+    public ByteCode[] code;
 
+    /**
+     * Rejestr zmiennych globalnych
+     */
+    public int[] globals;
+
+    /**
+     * Stos zmiennych
+     */
+    public int[] stack;
+
+    /**
+     * Printer do wypisywania wyników operacji
+     */
     public Printer printer = new Printer();
 }

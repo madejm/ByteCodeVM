@@ -9,7 +9,11 @@ import com.madejm.ByteCodeVM.BusinessObjects.Abstractions.ParseChain;
 import com.madejm.ByteCodeVM.BusinessObjects.Interfaces.Architecture;
 import com.madejm.ByteCodeVM.BusinessObjects.Models.ByteCode;
 
-public class TextParser {
+/**
+ * Parser, który na podstawie przekazanego pliku tekstowego oraz wskazanej architektury parsuje kod na obiekty operacji.
+ */
+
+public class TextParser{
 
 	private Architecture arch;
 

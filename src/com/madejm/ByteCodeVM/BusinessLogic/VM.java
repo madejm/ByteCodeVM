@@ -34,15 +34,20 @@ public class VM {
         this.context.stack = new int[DEFAULT_STACK_SIZE];
     }
 
+    /**
+     * Metoda rozpoczynająca wykonanie kodu
+     */
     public void exec() {
         this.context.ip = this.context.startip;
         cpu();
     }
 
-    /** Simulate the fetch-decode execute cycle */
+    /**
+     * Symulacja iteracyjnego zachowania procesora
+     */
     protected void cpu() {
         ByteCode opcode = this.context.code[this.context.ip];
-        int a,b,addr,offset;
+
         while (!(opcode instanceof HALT) && this.context.ip < this.context.code.length) {
             if ( trace ) ps.printf("%-35s", disInstr());
             this.context.ip++; //jump to next instruction or to operand

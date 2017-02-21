@@ -3,7 +3,7 @@ package com.madejm.ByteCodeVM.BusinessObjects.Models;
 import com.madejm.ByteCodeVM.BusinessObjects.Interfaces.ByteCodeInterpreter;
 
 /**
- * Created by mejdej on 19/12/16.
+ * Deklaracja oraz implementacja interpretera dostępnych opercji
  */
 public class ByteCode {
 
@@ -17,6 +17,9 @@ public class ByteCode {
         this.name = this.getClass().getSimpleName();
     }
 
+    /**
+     * Typ VALUE przetrzymuje parametr dla innej operacji
+     */
     public static class VALUE extends ByteCode {
 
         public int value;

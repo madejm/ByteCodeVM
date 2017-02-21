@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by mejdej on 20/02/17.
+ * Obiekt odpowiedzialny za kolejkowanie oraz wypisywanie wyników operacji
  */
 public class Printer {
 
