@@ -6,7 +6,7 @@ import com.madejm.ByteCodeVM.BusinessObjects.Abstractions.ParseChain.*;
 import com.madejm.ByteCodeVM.BusinessObjects.Interfaces.Architecture;
 
 /**
- * Created by mejdej on 20/02/17.
+ * Standardowa architektura obsługująca operacje dodawania, odejmowania oraz mnożenia, przetrzymywanie wartości oraz wypisywanie.
  */
 public class ArchitectureStandard implements Architecture {
     public ParseChain makeChain() {

@@ -6,7 +6,7 @@ import com.madejm.ByteCodeVM.BusinessObjects.Abstractions.ParseChain.*;
 import com.madejm.ByteCodeVM.BusinessObjects.Interfaces.Architecture;
 
 /**
- * Created by mejdej on 20/02/17.
+ * Architektura rozszerzająca standardową, dodająca zmienne globalne, porównania, branch oraz pop
  */
 public class ArchitectureExtended implements Architecture {
     public ParseChain makeChain() {

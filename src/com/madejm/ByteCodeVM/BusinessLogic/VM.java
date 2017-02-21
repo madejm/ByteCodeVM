@@ -1,8 +1,5 @@
 package com.madejm.ByteCodeVM.BusinessLogic;
 
-/**
- * Created by mejdej on 17/12/16.
- */
 import com.madejm.ByteCodeVM.BusinessObjects.Models.ByteCode;
 import com.madejm.ByteCodeVM.BusinessObjects.Models.VMContext;
 import com.madejm.ByteCodeVM.BusinessObjects.Interfaces.ByteCodeInterpreter;
@@ -13,7 +10,9 @@ import java.util.List;
 
 import static com.madejm.ByteCodeVM.BusinessObjects.Models.ByteCode.*;
 
-/** A simple stack-based interpreter */
+/**
+ * Interpreter operacji bazujący na stosie.
+ */
 
 public class VM {
     public static final int DEFAULT_STACK_SIZE = 1000;
