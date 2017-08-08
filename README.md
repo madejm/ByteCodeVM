@@ -1,5 +1,8 @@
 # ByteCodeVM
 
+Simple implementation of virtual machine in Java.
+
+
 Design patterns:
 https://sourcemaking.com/design_patterns
 
